@@ -1,87 +1,85 @@
 {%extends 'base.html' %}
 
-{%block title%} Welcome to IBLOGS {%endblock%}
+{%block title%} Supremus Dilectio 2008 {%endblock%}
 
 {%block content%}
 
 
-<div class="container-custom">
+<section class="section wb" style='font-family: "Gelasio", serif;
+font-weight: 400;'>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+
+                    {%for p in posts %}
+
+                    <div class="blog-list clearfix">
+                        <div class="blog-box row" style="flex-wrap: nowrap;">
+                            <div class="col-md-4">
+                                <div class="post-media">
+                                    <a href="/blog/{{p.url}}" title="">
+                                        <img src="/media/{{p.image}}" alt="" class="img-fluid">
+                                        <!-- <img width="300px" height="168px" src="/media/{{p.image}}" alt="" class="img-fluid"> -->
+                                        <!-- <div class="hovereffect"></div> -->
+                                    </a>
+                                </div><!-- end media -->
+                            </div><!-- end col -->
+                            <div>
+                                <h1 id="spacing"></h1>
+                            </div>
+                            <div class="blog-meta big-meta col-md-8">
+                                <span class="bg-aqua"><a href="/blog/{{p.url}}" title="" class="para" style="color: black;">{{p.date | truncatewords:3}}</a></span>
+                                <h3 class="heading"><a href="/blog/{{p.url}}" title="">{{p.title |truncatewords:5 | safe}}</a></h3>
+                            </div><!-- end meta -->
+                        </div><!-- end blog-box -->
+
+                        <hr class="invis">
+                    </div>
+
+                    {%endfor%}
 
 
-    <!-- Set up your HTML -->
-    <div class="owl-carousel">
 
-
-        {% for cat in cats %}
-
-        <div class="card item" style="margin-left:10px;">
-
-            <div class="img-container">
-
-                <img src="/media/{{cat.image}}" class="responsive-img" alt="">
-
-            </div>
-            <div class="card-content">
-
-                <div class="card-title">
-                    {{cat.title}}
+                    
                 </div>
-
-                <p class="truncate">{{cat.description}}</p>
-                <div class="container center-align mt20">
-                    <a href="/category/{{cat.url}}" class="btn bg-primary">VIEW</a>
-                </div>
-
-            </div>
+            </div><!-- end col -->
 
 
-        </div>
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                    <div class="widget">
+                        <form class="form-inline search-form" action="/search" method="get" style="align-items: flex-start;">
+                            <div class="form-group">
+                                <input type="text" name="query" id="search" value="" class="form-control" placeholder="Search on the site">
+                            </div>
+                            <button type="submit" class="btn btn-primary"
+                                style="background-color: black !important; color: white !important;"><i
+                                    class="fa fa-search"></i></button>
+                        </form>
+                    </div>
 
-        {%endfor%}
+                    <div class="widget">
+                        <h2 class="widget-title">KATEGORIEN</h2>
+                        <div class="link-widget">
+                            
+                            <ul>
+                                {% for cat in cats %}
 
-    </div>
+                                <li><a href="/category/{{cat.url}}">{{cat.title}}</a></li>
 
+                                {%endfor%}
 
-</div>
-
-
-<div class="container">
-
-    <div class="row">
-
-        <div class="col s12 ">
-
-
-            {%for p in posts %}
-
-            <div class="row">
-
-                <div class="col s12 m8">
-
-
-                    {{p.content |truncatewords:60 | safe}}
-                    <div class="mt20">
-                        <a href="/blog/{{p.url}}" class="btn  bg-primary ">Read More..</a>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col s12 m4">
-                    <img src="/media/{{p.image}}" class="responsive-img" style="margin-top:50px;">
-
-                </div>
-
             </div>
 
 
-            {%endfor %}
-
-
-        </div>
-
-
-    </div>
-
-</div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
 
 
 {%endblock%}

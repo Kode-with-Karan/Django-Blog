@@ -1,65 +1,187 @@
 {%extends 'base.html' %}
 
-{%block title%} POST {%endblock%}
+{%block title%} {{post.title}} | Supremus Dilectio 2008 {%endblock%}
 
 {%block content%}
 
+<img src="/media/{{post.image}}" alt="" class="postBgImg">
 
-<div class="container-custom">
+<div class="wrapper">
+    <!-- <i id="left"><</i> -->
+    <i id="left" class="fa-solid fa-angle-left"></i>
+    <ul class="carousel">
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider1.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider2.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider3.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider4.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider5.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider6.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider7.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider8.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider9.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider10.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider11.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider12.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider13.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider14.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider15.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider16.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider17.webp" alt="img" draggable="false"></div>
+        </li>
+        <li class="card">
+            <div class="img"><img src="/media/sliderImg/slider18.webp" alt="img" draggable="false"></div>
+        </li>
+    </ul>
+    <i id="right" class="fa-solid fa-angle-right"></i>
+</div>
+</div>
 
 
-    <div class="row">
-        <div class="col s12 m10">
+<section class="section wb" style="border: none">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="col s12 m10">
+
+                    <p class="para">{{post.date}} von {{post.auther}}</p>
+
+                    <h3 class="heading">{{post.title}}</h3>
+
+                    <p class="para">( {{post.cat.title}} )</p>
+
+                    <p class="para">
+                        {{post.content|safe}}
+                    </p>
 
 
-            <h3>{{post.title}}</h3>
 
-            <p>( {{post.cat.title}} )</p>
+                    {% for image in images %}
 
-            <img src="/media/{{post.image}}" class="responsive-img" alt="">
+                    <img src="/media/{{image.image}}" class="responsive-img" alt=""
+                        style="width: 100%; margin: 20px 0;">
 
-            <br>
-            <p>
-                {{post.content|safe}}
-            </p>
+                    {%endfor%}
+                    <br>
+                    
 
-        </div>
-
-        <div class="col s12 m2">
-
-
-            {% for cat in cats %}
-
-            <div class="card item" style="margin-left:10px;">
-
-                <div class="img-container">
-
-                    <img src="/media/{{cat.image}}" class="responsive-img" alt="">
-
-                </div>
-                <div class="card-content">
-
-                    <b>
-                        {{cat.title}}
-                    </b>
-
-                    <p class="truncate">{{cat.description}}</p>
-                    <div class="container center-align mt20">
-                        <a href="/category/{{cat.url}}" class="btn bg-primary">VIEW</a>
+                    <div class="post-sharing">
+                        <hr style="width: 70px; margin: 10px 0;">
+                        <p class="para" style="font-size: 15px;">Share this:</p>
+                        <ul class="list-inline">
+                            <li><a href="#" class="fb-button btn btn-primary" style="border-color: black !important ;border: 1px solid;"><i class="fa fa-twitter" style="color: black !important ;"></i> <span class="down-mobile" style="color: black !important ;">Twitter</span></a></li>
+                            <li><a href="#" class="fb-button btn btn-primary" style="border-color: black !important ;border: 1px solid;"><i class="fa fa-facebook" style="color: black !important ;"></i> <span class="down-mobile" style="color: black !important ;">Facebook</span></a></li>
+                        </ul>
                     </div>
 
+                    <div class="related_post">
+                        <br><br>
+                        <hr style="width: 100px; margin: 10px 0;">
+                        <p class="para" style="font-size: 15px;">Ähnliche Beiträge:</p>
+                        <div style="display: flex;justify-content: space-between;">
+                        {% for post in related_post %}
+                        <ul style="list-style: none; margin: 0;padding: 0;">
+                            <li><a href="/blog/{{post.url}}" style="text-decoration: underline !important;color: gray;">{{post.title}}</a></li>
+                            <li>{{post.date}}</li>
+                            <li>{{post.cat}}</li>
+                        </ul>
+                        {%endfor%}
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="para" style="font-size: 14px; margin: 30px 0; border-bottom: 10px solid;">Dieser Beitrag wurde unter <a href="/category/{{related_cat.url}}">{{post.cat}}</a> veröffentlicht. Setze ein Lesezeichen auf den Permalink..</p>
+                    </div>
+
+
+                    <div class="related_post">
+                        <br><br>
+                        <div style="    display: flex;
+                        justify-content: space-between;
+                        background: black;
+                        padding: 20px;">
+                        {% for post in related_post %}
+                        <ul style="list-style: none; margin: 0;padding: 0;">
+                            <li><a href="/blog/{{post.url}}" style="color: white;">{{post.title}}</a></li>
+                        </ul>
+                        {%endfor%}
+                    </div>
+                    </div>
+
+
+
+
+                    
                 </div>
 
+            </div><!-- end col -->
 
-            </div>
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                    <div class="widget">
+                        <form class="form-inline search-form" action="/search" method="get" style="align-items: flex-start;">
+                            <div class="form-group">
+                                <input type="text" name="query" id="search" value="" class="form-control" placeholder="Search on the site">
+                            </div>
+                            <button type="submit" class="btn btn-primary"
+                                style="background-color: black !important; color: white !important;"><i
+                                    class="fa fa-search"></i></button>
+                        </form>
+                    </div><!-- end widget -->
 
-            {%endfor%}
+                    <div class="widget">
+                        <h2 class="widget-title">KATEGORIEN</h2>
+                        <div class="link-widget">
+
+                            <ul>
+                                {% for cat in cats %}
+
+                                <li><a href="/category/{{cat.url}}">{{cat.title}}</a></li>
+
+                                {%endfor%}
+
+                            </ul>
+                        </div><!-- end link-widget -->
+                    </div><!-- end widget -->
+                </div><!-- end sidebar -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
 
 
-        </div>
-    </div>
-
-</div>
 
 
 {%endblock%}

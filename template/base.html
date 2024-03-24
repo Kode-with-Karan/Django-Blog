@@ -1,83 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> {%block title%} {%endblock%} </title>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+<!-- Basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<!-- Site Metas -->
+<title>{%block title%} {%endblock%}</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+{% load static %}
+<!-- Site Icons -->
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- Design fonts -->
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+
+<!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+
+<!-- FontAwesome Icons core CSS -->
+<link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="{% static 'style.css'%}" rel="stylesheet">
+
+<!-- Responsive styles for this template -->
+<link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+
+<!-- Colors for this template -->
+<link href="{% static 'css/colors.css'%}" rel="stylesheet">
+
+<!-- Version Garden CSS for this template -->
+<link href="{% static 'css/version/garden.css'%}" rel="stylesheet">
+
+<link href="{% static 'css/slider.css'%}" rel="stylesheet">
+
+
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
-<body>
+<style>
 
-{%include 'header.html' %}
-
-{%block content %}
-
-{%endblock%}
-
-{% include 'footer.html' %}
-
-<script>
-    M.AutoInit();
-
-
-
-
-
-
-
-
-
-</script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="{% static 'js/owl.carousel.min.js'%}"></script>
-
-<script>
-    $(document).ready(function(){
-  $(".owl-carousel").owlCarousel(
-  {
-    loop: true,
-
-      autoplay: true,
-
-      nav: false,
-      responsiveClass: true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:3,
-            nav:true,
-            loop:false
-        }
+    .para {
+        color: #262626;
+        font-family: "georgia", sans-serif;
+        font-size: 20px;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    .para>p{
+        color: #262626;
+        font-family: "georgia", sans-serif;
+        font-size: 20px;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    .heading {
+      font-family: "Raleway", sans-serif;
+        color: #000;
+        font-size: 2.5em;
+        font-weight: 400;
+        line-height: 1.5em;
+        margin: 0 0 30px;
+        padding: 0;
+        word-wrap: break-word;
+        width: 90%;
     }
 
-  }
-  );
-});
+
+</style>
+<body>
+
+  {%include 'header.html' %}
+
+  {%block content %}
+
+  {%endblock%}
+
+  {% include 'footer.html' %}
 
 
 
 
-</script>
-
+  <!-- Core JavaScript
+================================================== -->
+  <script src="{% static 'js/jquery.min.js'%}"></script>
+  <script src="{% static 'js/tether.min.js'%}"></script>
+  <script src="{% static 'js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'js/custom.js'%}"></script>
+  <script src="{% static 'js/slider.js'%}"></script>
+  <script>
+    nav_toggle = document.getElementsByClassName("navbar-toggler")[0];
+    collapse_nav = document.getElementsByClassName("navbar-collapse")[0];
+    console.log(collapse_nav.style.display = "none")
+    nav_toggle.addEventListener("click", function(){
+      if(collapse_nav.style.display == "none"){
+        collapse_nav.style.display = "block";
+      }else{
+        collapse_nav.style.display = "none";
+      }
+    })
+    
+  </script>
 </body>
+
 </html>

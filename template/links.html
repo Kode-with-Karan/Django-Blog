@@ -1,0 +1,79 @@
+{%extends 'base.html' %}
+
+{%block title%} Links | Supremus Dilectio 2008 {%endblock%}
+
+{%block content%}
+
+
+
+
+<section class="section wb" style='font-family: "Gelasio", serif;
+font-weight: 400;'>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+
+                    <div>
+                        <h3 class="heading">LINKS</h3>
+                        <p class="para">
+                            Infostand Wehen(Facebook) <br>
+                            Infostand Wehen (Instagram)
+                        </p>
+                        <p class="para">
+                            Supporters Ingolstadt
+                            <br><br>
+                            Herzenssache
+                        </p>
+
+
+                    </div>
+                    <div class="post-sharing">
+                        <hr style="width: 70px; margin: 10px 0;">
+                        <p class="para" style="font-size: 15px;">Share this:</p>
+                        <ul class="list-inline">
+                            <li><a href="#" class="fb-button btn btn-primary" style="border-color: black !important ;border: 1px solid;"><i class="fa fa-twitter" style="color: black !important ;"></i> <span class="down-mobile" style="color: black !important ;">Twitter</span></a></li>
+                            <li><a href="#" class="fb-button btn btn-primary" style="border-color: black !important ;border: 1px solid;"><i class="fa fa-facebook" style="color: black !important ;"></i> <span class="down-mobile" style="color: black !important ;">Facebook</span></a></li>
+                        </ul>
+                    </div>
+
+
+
+                    
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                    <div class="widget">
+                        <form class="form-inline search-form" action="/search" method="get" style="align-items: flex-start;">
+                            <div class="form-group">
+                                <input type="text" name="query" id="search" value="" class="form-control" placeholder="Search on the site">
+                            </div>
+                            <button type="submit" class="btn btn-primary"
+                                style="background-color: black !important; color: white !important;"><i
+                                    class="fa fa-search"></i></button>
+                        </form>
+                    </div><!-- end widget -->
+
+                    <div class="widget">
+                        <h2 class="widget-title">KATEGORIEN</h2>
+                        <div class="link-widget">
+                            
+                            <ul>
+                                {% for cat in cats %}
+
+                                <li><a href="/category/{{cat.url}}">{{cat.title}}</a></li>
+
+                                {%endfor%}
+
+                            </ul>
+                        </div><!-- end link-widget -->
+                    </div><!-- end widget -->
+                </div><!-- end sidebar -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+
+{%endblock%}

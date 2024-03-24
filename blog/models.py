@@ -13,12 +13,12 @@ class Category(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     url = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='category/')
+    # image = models.ImageField(upload_to='category/')
     add_date = models.DateTimeField(auto_now_add=True, null=True)
 
-    def image_tag(self):
-        return format_html(
-            '<img src="/media/{}" style="width:40px;height:40px;border-radius:50%;"  />'.format(self.image))
+    # def image_tag(self):
+    #     return format_html(
+    #         '<img src="/media/{}" style="width:40px;height:40px;border-radius:50%;"  />'.format(self.image))
 
     def __str__(self):
         return self.title
@@ -27,11 +27,21 @@ class Category(models.Model):
 # Post Mode
 class Post(models.Model):
     post_id = models.AutoField(primary_key=True)
+    date = models.CharField(max_length=50)
     title = models.CharField(max_length=200)
     content = models.TextField()
+    auther = models.CharField(max_length=200)
     url = models.CharField(max_length=100)
     cat = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='post/')
+    # image = models.ImageField(blank=True)
 
     def __str__(self):
         return self.title
+    
+class PostImage(models.Model):
+    post = models.ForeignKey(Post, default=None, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="post/")
+
+    def __str__(self):
+        return self.post.title

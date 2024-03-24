@@ -17,10 +17,20 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import home, post,category
+from .views import *
 
 urlpatterns = [
-    path('home/', home),
+    path('', home),
+    path('about/', about),
+    path('datenschutz/', datenschutz),
+    path('fanstand/', fanstand),
+    path('gasteblock/', gasteblock),
+    path('kontakt/', kontakt),
+    path('about/', about),
+    path('links/', links),
+    path('supcrew/', supcrew),
+    path('vereinshistorie/', vereinshistorie),
+    path('search/', search),
     path('blog/<slug:url>', post),
     path('category/<slug:url>',category)
 ]

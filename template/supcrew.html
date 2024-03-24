@@ -1,0 +1,78 @@
+
+{%extends 'base.html' %}
+
+{%block title%} Supcrew | Supremus Dilectio 2008 {%endblock%}
+
+{%block content%}
+
+
+
+
+<section class="section wb" style='font-family: "Gelasio", serif;
+font-weight: 400;'>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+
+                    <div>
+                        
+                    </div>
+                    <h3 class="heading">SUPCREW</h3>
+                    <p class="para">
+                    2010: Ein Jahr der Veränderungen. Nicht nur durch die Verpflichtung unseres Fußballsgottes Alf Mintzel, sondern auch die Gründung unserer damaligen Jugendgruppe Supcrew.  
+                </p><p class="para">
+                   Die Supcrew ist eine Zusammenkunft von Interessierten, welche die Lücke zwischen ‚unerfahrenen Zuschauern’ und Ultrá schließen sollte. Somit soll die Supcrew eine Plattform bieten in die Materie Ultrá einzutauchen, um die Grundlage dafür zu schaffen den Sportverein und unsere Farben auch über den Spieltag hinaus zu repräsentieren. Denn woher sollen Unerfahrene wissen, was „Ultra“ bedeutet? Es ist ein zentraler Bestandteil unseres Lebens und prägt dieses auch über den Spieltag hinaus. Der Sportverein und die Gruppe sind somit im Alltag allgegenwärtig, egal ob Choreografien vorbereitet, neue Sticker entworfen, bei regelmäßigen Treffen über aktuelle Themen debattiert oder gemeinsam durch die Straßen der Vorstadt gestreift wird. Durch das Einbinden der Interessierten in eben jene Aktivitäten wird ihnen die Materie Ultra’ nähergebracht. Außerdem wird ihnen so eine Chance geboten, Verantwortung zu übernehmen und aktiv an der Ausgestaltung der Gruppe sowie ihrer Aktivitäten zu partizipieren.  
+                </p><p class="para">
+                   Ebenso wie Alf Mintzel in seiner Karriere Tiefpunkte erlebte, so mussten auch wir als Supremus Dilectio und Supcrew herbe Rückschläge hinnehmen. In Erinnerung bleibt uns die Aktion vom Septeber 2013 in Türkismühle und den daraus hervorgegangenen Stadionverboten Anfang 2014. Fast 40 Stadionverbote gingen bei uns ein, unter den Betroffenen waren auch viele Mitglieder der Supcrew. Mitte Januar folgte der Tiefpunkt für die  noch sehr junge Gruppe: Man entschied sich dem Profifussball (vorerst) den Rücken zuzukehren und nur noch Spiele der U21 zu besuchen. Quasi im selben Atemzug wurde schweren Herzens beschlossen die Supcrew aufzulösen.
+                </p><p class="para">
+                   Es verging einige Zeit bis der Großteil der Stadionverbote auslief und sich dazu entschieden wurde, wieder die Spiele der Profimannschaft zu besuchen. Die Auflösung der Supcrew blieb allerdings bestehen.  
+                </p><p class="para">
+                   Totgesagte leben länger: Die Auferstehung der Supcrew erfolgte vier Jahre später (2018). Dies lässt sich auf die immer größer werdende Nachfrage nach einem entsprechenden Anlaufpunkt für junge Menschen in der Fanszene zurückführen, welche schließlich zur (Neu-)Gründung der Supcrew führte. Die Werte und Zielsetzungen blieben bestehen. Doch die Gruppe ist diverser denn je: Ein motivierter, kleiner Haufen Verrückter, die willig sind Alles für Stadt und Verein zu geben.
+                </p>
+                </div>
+                <div class="post-sharing">
+                    <hr style="width: 70px; margin: 10px 0;">
+                    <p class="para" style="font-size: 15px;">Share this:</p>
+                    <ul class="list-inline">
+                        <li><a href="#" class="fb-button btn btn-primary" style="border-color: black !important ;border: 1px solid;"><i class="fa fa-twitter" style="color: black !important ;"></i> <span class="down-mobile" style="color: black !important ;">Twitter</span></a></li>
+                        <li><a href="#" class="fb-button btn btn-primary" style="border-color: black !important ;border: 1px solid;"><i class="fa fa-facebook" style="color: black !important ;"></i> <span class="down-mobile" style="color: black !important ;">Facebook</span></a></li>
+                    </ul>
+                </div>
+            </div><!-- end col -->
+            
+
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                    <div class="widget">
+                        <form class="form-inline search-form" action="/search" method="get" style="align-items: flex-start;">
+                            <div class="form-group">
+                                <input type="text" name="query" id="search" value="" class="form-control" placeholder="Search on the site">
+                            </div>
+                            <button type="submit" class="btn btn-primary"
+                                style="background-color: black !important; color: white !important;"><i
+                                    class="fa fa-search"></i></button>
+                        </form>
+                    </div><!-- end widget -->
+
+                    <div class="widget">
+                        <h2 class="widget-title">KATEGORIEN</h2>
+                        <div class="link-widget">
+                            
+                            <ul>
+                                {% for cat in cats %}
+
+                                <li><a href="/category/{{cat.url}}">{{cat.title}}</a></li>
+
+                                {%endfor%}
+
+                            </ul>
+                        </div><!-- end link-widget -->
+                    </div><!-- end widget -->
+                </div><!-- end sidebar -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+
+{%endblock%}

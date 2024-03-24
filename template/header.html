@@ -1,26 +1,98 @@
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-
-
-    {% for cat in cats %}
-
-    <li><a href="/category/{{cat.url}}">{{cat.title}}</a></li>
-
-    {% endfor %}
-
-</ul>
-<nav class="bg-primary">
-    <div class="container">
-        <div class="nav-wrapper">
-            <a href="/home" class="brand-logo">IBLOGS</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="/about">ABOUT</a></li>
-                <li><a href="/admin">ADMIN</a></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">CATEGORY<i
-                        class="material-icons right">arrow_drop_down</i></a>
-                </li>
-            </ul>
+{% load static %}
+<div id="wrapper">
+    <div class="collapse top-search" id="collapseExample">
+        <div class="card card-block">
+            <div class="newsletter-widget text-center">
+                <form class="form-inline">
+                    <input type="text" class="form-control" placeholder="What you are looking for?">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                </form>
+            </div><!-- end newsletter -->
         </div>
-    </div>
-</nav>
+    </div><!-- end top-search -->
+
+    <div class="header-section" style="
+    background: black;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo">
+                        <a href="garden-index.html"><img src="{% static 'img/logo-image.jpg'%}" alt=""></a>
+                    </div><!-- end logo -->
+                </div>
+            </div><!-- end row -->
+        </div><!-- end header-logo -->
+    </div><!-- end header -->
+
+    <header class="header" style="
+    background: black;">
+        <div class="container" style="width: 63%;">
+            <nav class="navbar navbar-inverse navbar-toggleable-md">
+                <button style="margin: auto;background-color: transparent !important;border: none; outline: none;"
+                    class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Forest Timemenu"
+                    aria-controls="Forest Timemenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span style="
+                    position: relative;
+                    width: 18px;
+                    height: 2px;
+                    background: white;
+                    top: -2px;"
+
+                    class="navbar-toggler-icon">
+                        <span style="
+                        position: relative;
+                        width: 18px;
+                        height: 2px;
+                        background: white;
+                        display: block;
+                        top: -6px;"></span>
+                        <span style="
+                                                position: relative;
+                        width: 18px;
+                        height: 2px;
+                        background: white;
+                        display: block;
+                        top: 4px;
+                        "></span>
+                    </span> MENÜ
+                </button>
+                <div class="collapse navbar-collapse justify-content-md-center" id="Forest Timemenu">
+                    <ul class="navbar-nav" style="flex-wrap: wrap;">
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/">STARTSEITE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/about">ÜBER UNS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/supcrew">SUPCREW</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/vereinshistorie">VEREINSHISTORIE
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/fanstand">FANSTAND
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/gasteblock">GÄSTEBLOCK
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/kontakt">KONTAKT
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/links">LINKS
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/datenschutz">DATENSCHUTZ / HAFTUNG
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div><!-- end container -->
+    </header><!-- end header -->
